@@ -32,13 +32,15 @@ def get_entry():
     name = input('Name: ')
     for key, value in contacts.items():
         if name == contacts[key].get('name'):
-            print('Found entry for {}: {}'.format(contacts[key].get('name'),contacts[key].get('number')))
+        print('Found entry for {}:\n Phone: {}, Email: {}, URL: {}'.format(contacts[key].get('name'),contacts[key].get('number'),contacts[key].get('email'), contacts[key].get('website')))
     display_menu()
 
 
 def set_entry():
     name = input('Name: ')
     number = input('Phone Number: ')
+    email = input('Email :')
+    website = input('Website URL :')
     entry = 'entry{}'.format(entry_num + 1)
     contacts[entry] = {'name': name, 'number': number}
     display_menu()
@@ -60,7 +62,7 @@ def del_entry():
 def list_entries():
     print('')
     for key, value in contacts.items():
-        print('Found entry for {}: {}'.format(contacts[key].get('name'),contacts[key].get('number')))
+        print('Found entry for {}:\n Phone: {}, Email: {}, URL: {}'.format(contacts[key].get('name'),contacts[key].get('number'),contacts[key].get('email'), contacts[key].get('website')))
     display_menu()
     
     
